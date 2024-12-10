@@ -52,7 +52,7 @@ public:
 
   void display() const {
     if (isEmpty()) {
-      cout << "The queue is empty" << endl;
+      cout << "The coffee queue is empty" << endl;
       return;
     }
     Node* current = front;
@@ -103,6 +103,31 @@ int main() {
     }
 
     coffeeQueue.display();
+
+    cout << endl;
+    cout << "Muffin Booth:" << endl;
+    if (!muffinQueue.empty()) {
+      auto customer = muffinQueue.front();
+      muffinQueue.pop_front();
+      cout << customer.first << " with a " << customer.second << " is served and leaves queue" << endl;
+    } else {
+      cout << "The muffin queue is empty." << endl;
+    }
+
+    if (rand() % 2 == 0) {
+      generateCustomer(name, muffinFlavor, muffinFlavors, 6);
+      cout << name << " with a " << muffinFlavor << " joins the muffin queue." << endl;
+      muffinQueue.push_back({name, muffinFlavor});
+    }
+    
+    if (muffinQueue.empty()) {
+      cout << "The muffin queue is empty" << endl;
+    } else {
+      cout << "Current muffin queue:" << endl;
+      for (const auto& customer : muffinQueue) {
+        cout << " " << customer.first << " (" << customer.second<< ")" << endl;
+      }
+    }
   }
 
   return 0;
