@@ -146,17 +146,17 @@ int main() {
     }
 
     if (rand() % 2 == 0) {
-      generateCustomer(name, muffinFlavor, muffinFlavors, 6);
-      cout << name << " with a " << muffinFlavor << " muffin joins the muffin queue." << endl;
-      muffinQueue.push_back({name, muffinFlavor});
+      generateCustomer(name, braceletColor, braceletColors, 6);
+      cout << name << " with a " << braceletColor << " bracelet joins the bracelet queue." << endl;
+      braceletQueue.push_back({name, braceletColor});
     }
     
-    if (muffinQueue.empty()) {
-      cout << "The muffin queue is empty" << endl;
+    if (braceletQueue.empty()) {
+      cout << "The bracelet queue is empty" << endl;
     } else {
-      cout << "Current muffin queue:" << endl;
-      for (const auto& customer : muffinQueue) {
-        cout << " " << customer.first << " (" << customer.second<< " muffin)" << endl;
+      cout << "Current bracelet queue:" << endl;
+      for (const auto& customer : braceletQueue) {
+        cout << " " << customer.first << " (" << customer.second<< " bracelet)" << endl;
       }
     }
 
