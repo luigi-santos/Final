@@ -165,6 +165,16 @@ int main() {
         cout << " " << customer.first << " (" << customer.second<< " bracelet)" << endl;
       }
     }
+    cout << endl;
+    cout << "Snack Booth:" << endl;
+    if (!snackQueue.empty()) {
+      auto customer = snackQueue.front();
+      snackQueue.pop;
+      cout << customer.first << " with a " << customer.second << " is served and leaves queue" << endl;
+    } else {
+      cout << "The snack queue is empty." << endl;
+    }
+
   }
   return 0;
 }
