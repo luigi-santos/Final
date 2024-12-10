@@ -13,6 +13,38 @@ struct Node {
   node(string n, string d) : name(n), drink(d), next(nullptr) {}
 };
 
+class CoffeeQueue {
+private:
+  Node* front;
+  Node* rear;
+
+public:
+  CoffeeQueue() : front(nullptr), rear(nullptr) {}
+
+  void addQueue(string name, string drink) {
+    Node* newNode + new Node(name, drink);
+    if (rear == nullptr) {
+      front = rear = newNode;
+    } else {
+      rear->next = newNode;
+      rear = newNode;
+    }
+  }
+
+  void removeQueue() {
+    if (front == nullptr) {
+      cout << "The queue is empty." << empty;
+      return;
+    }
+    Node* temp = front;
+    front = front->next;
+    if (front == nullptr) {
+      rear = nullptr;
+    }
+    cout << tem->name<< " with a " << temp->drink << " is served and leaves queue." << endl;
+    delete temp;
+  }
+
 void generateCustomer(string& name, string& drink) {
   string names[] = ("Luigi", "Angelina", "Amari", "Maria", "Stewie", "Nani"};
   string drink[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"}
