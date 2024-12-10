@@ -8,6 +8,13 @@
 
 using namespace std;
 
+struct Customer {
+  string name;
+  string item;
+
+  Customer(string n, string i) : name (n), item(i) {}
+};
+
 struct Node {
   string name;
   string drink;
