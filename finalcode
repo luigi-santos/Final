@@ -10,7 +10,7 @@ struct Node {
   string drink;
   Node* next;
 
-  node(string n, string d) : name(n), drink(d), next(nullptr) {}
+  Node(string n, string d) : name(n), drink(d), next(nullptr) {}
 };
 
 class CoffeeQueue {
@@ -22,7 +22,7 @@ public:
   CoffeeQueue() : front(nullptr), rear(nullptr) {}
 
   void addQueue(string name, string drink) {
-    Node* newNode + new Node(name, drink);
+    Node* newNode = new Node(name, drink);
     if (rear == nullptr) {
       front = rear = newNode;
     } else {
@@ -33,7 +33,7 @@ public:
 
   void removeQueue() {
     if (front == nullptr) {
-      cout << "The queue is empty." << empty;
+      cout << "The queue is empty." << endl;
       return;
     }
     Node* temp = front;
@@ -41,7 +41,7 @@ public:
     if (front == nullptr) {
       rear = nullptr;
     }
-    cout << tem->name<< " with a " << temp->drink << " is served and leaves queue." << endl;
+    cout << temp->name << " with a " << temp->drink << " is served and leaves queue." << endl;
     delete temp;
   }
 
@@ -64,8 +64,8 @@ public:
 };
 
 void generateCustomer(string& name, string& drink) {
-  string names[] = ("Luigi", "Angelina", "Amari", "Maria", "Stewie", "Nani"};
-  string drink[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"}
+  string names[] = {"Luigi", "Angelina", "Amari", "Maria", "Stewie", "Nani"};
+  string drinks[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"};
   name = names[rand() % 6];
   drink = drinks[rand() % 6];
 }
@@ -84,7 +84,7 @@ int main() {
   for (int round = 1; round <= 10; ++round) {
     cout << endl;
     cout << "--- Round " << round << " ---" << endl;
-    queue.RemoveQueue();
+    queue.removeQueue();
 
     if (rand() % 2 == 0) {
       generateCustomer(name, drink);
