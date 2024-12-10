@@ -4,6 +4,7 @@
 #include <ctime>
 #include <deque>
 #include <vector>
+#include <queue>
 
 using namespace std;
 
@@ -78,11 +79,13 @@ int main() {
   CoffeeQueue coffeeQueue;
   deque<pair<string, string>> muffinQueue;
   vector<pair<string, string>> braceletQueue;
+  queue<pair<string, string>> snackQueue;
 
-  string name, coffeeDrink, muffinFlavor, braceletColor;
+  string name, coffeeDrink, muffinFlavor, braceletColor, snackType;
   string coffeeDrinks[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"};
   string muffinFlavors[] = {"Chocolate", "Blueberry", "Banana", "Confetti", "Cinnamon", "Cupcake"}; 
   string braceletColors[] = {"Red", "Blue", "Yellow", "Green", "Pink", "Purple"};
+  string snackTypes[] = {"Hot Dog", "Popcorn", "Cotton Candy", "Churro", "Funnel Cake", "Turkey Leg"};
 
   for (int i = 0; i < 3; ++i) {
     generateCustomer(name, coffeeDrink, coffeeDrinks, 6);
@@ -93,6 +96,9 @@ int main() {
 
     generateCustomer(name, braceletColor, braceletColors, 6);
     braceletQueue.push_back({name, braceletColor});
+
+    generateCustomer(name, snackType, snackTypes, 6);
+    snackQueue.push({name, snackType});
   }
 
   for (int round = 1; round <= 10; ++round) {
