@@ -73,30 +73,35 @@ void generateCustomer(string& name, string& item, const string items[], int item
 int main() {
   srand(static_cast<unsigned>(time(0)));
 
-  CoffeeQueue queue;
+  CoffeeQueue coffeeQueue;
   deque<pair<string, string>> muffinQueue:
 
   string name, coffeedrink, muffinFlavor;
   string coffeeDrinks[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"};
-  string muffinFlavor[] = {"Chocolate", "Blueberry", "Banana", "Confetti", "Cinnamon", "Cupcake"}; 
+  string muffinFlavors[] = {"Chocolate", "Blueberry", "Banana", "Confetti", "Cinnamon", "Cupcake"}; 
   
   for (int i = 0; i < 3; ++i) {
-    generateCustomer(name, drink);
-    queue.addQueue(name, drink);
+    generateCustomer(name, coffeeDrink, coffeeDrinks, 6);
+    queue.addQueue(name, coffeeDrink);
+
+    generateCustomer(name, muffinFlavor, muffinFlavors, 6);
+    muffinQueue.push_back({name, muffinFlavor});
   }
 
   for (int round = 1; round <= 10; ++round) {
     cout << endl;
     cout << "--- Round " << round << " ---" << endl;
-    queue.removeQueue();
+
+    cout << "Coffee Booth:" << endl;
+    coffeeQueue.removeQueue();
 
     if (rand() % 2 == 0) {
-      generateCustomer(name, drink);
-      cout << name << " with a " << drink << " joins the queue." << endl;
-      queue.addQueue(name, drink);
+      generateCustomer(name, coffeeDrink, coffeeDrinks, 6);
+      cout << name << " with a " << coffeeDrink << " joins the coffee queue." << endl;
+      coffeequeue.addQueue(name, coffeeDrink);
     }
 
-    queue.display();
+    coffeeQueue.display();
   }
 
   return 0;
