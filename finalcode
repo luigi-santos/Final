@@ -1,1 +1,21 @@
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <ctime>
 
+using namespace std;
+
+struct Node {
+  string name;
+  string drink;
+  Node* next;
+
+  node(string n, string d) : name(n), drink(d), next(nullptr) {}
+};
+
+void generateCustomer(string& name, string& drink) {
+  string names[] = ("Luigi", "Angelina", "Amari", "Maria", "Stewie", "Nani"};
+  string drink[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"}
+  name = names[rand() % 6];
+  drink = drinks[rand() % 6];
+}
