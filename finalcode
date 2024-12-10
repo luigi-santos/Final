@@ -169,12 +169,28 @@ int main() {
     cout << "Snack Booth:" << endl;
     if (!snackQueue.empty()) {
       auto customer = snackQueue.front();
-      snackQueue.pop;
+      snackQueue.pop();
       cout << customer.first << " with a " << customer.second << " is served and leaves queue" << endl;
     } else {
       cout << "The snack queue is empty." << endl;
     }
-
+    if (rand() % 2 == 0) {
+      generateCustomer(name, snackType, snackTypes, 6);
+      cout << name << " with a " << snackType << " joins the snack queue." << endl;
+      snackQueue.push({name, snackType});
+    }
+    
+    if (snackQueue.empty()) {
+      cout << "The snack queue is empty" << endl;
+    } else {
+      cout << "Current snack queue:" << endl;
+      queue<pair<string, string>> tempQueue = snackQueue;
+      while (!tempQueue.empty()) {
+        auto customer = tempQueue.front();
+        cout << " " << customer.first << " (" << customer.second << ")" << endl;
+        tempQueue.pop();
+      }
+    }
   }
   return 0;
 }
