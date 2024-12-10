@@ -115,14 +115,14 @@ int main() {
     if (!muffinQueue.empty()) {
       auto customer = muffinQueue.front();
       muffinQueue.pop_front();
-      cout << customer.first << " with a " << customer.second << " is served and leaves queue" << endl;
+      cout << customer.first << " with a " << customer.second << " muffin is served and leaves queue" << endl;
     } else {
       cout << "The muffin queue is empty." << endl;
     }
 
     if (rand() % 2 == 0) {
       generateCustomer(name, muffinFlavor, muffinFlavors, 6);
-      cout << name << " with a " << muffinFlavor << " joins the muffin queue." << endl;
+      cout << name << " with a " << muffinFlavor << " muffin joins the muffin queue." << endl;
       muffinQueue.push_back({name, muffinFlavor});
     }
     
@@ -131,10 +131,34 @@ int main() {
     } else {
       cout << "Current muffin queue:" << endl;
       for (const auto& customer : muffinQueue) {
-        cout << " " << customer.first << " (" << customer.second<< ")" << endl;
+        cout << " " << customer.first << " (" << customer.second<< " muffin)" << endl;
       }
     }
-  }
+
+    cout << endl;
+    cout << "Friendship Bracelet Booth:" << endl;
+    if (!braceletQueue.empty()) {
+      auto customer = braceletQueue.front();
+      braceletQueue.erase(braceletQueue.begin());
+      cout << customer.first << " with a " << customer.second << " bracelet is served and leaves queue" << endl;
+    } else {
+      cout << "The bracelet queue is empty." << endl;
+    }
+
+    if (rand() % 2 == 0) {
+      generateCustomer(name, muffinFlavor, muffinFlavors, 6);
+      cout << name << " with a " << muffinFlavor << " muffin joins the muffin queue." << endl;
+      muffinQueue.push_back({name, muffinFlavor});
+    }
+    
+    if (muffinQueue.empty()) {
+      cout << "The muffin queue is empty" << endl;
+    } else {
+      cout << "Current muffin queue:" << endl;
+      for (const auto& customer : muffinQueue) {
+        cout << " " << customer.first << " (" << customer.second<< " muffin)" << endl;
+      }
+    }
 
   return 0;
 }
