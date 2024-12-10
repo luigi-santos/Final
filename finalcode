@@ -63,19 +63,23 @@ public:
   }
 };
 
-void generateCustomer(string& name, string& drink) {
+void generateCustomer(string& name, string& item, const string items[], int itemSize) {
   string names[] = {"Luigi", "Angelina", "Amari", "Maria", "Stewie", "Nani"};
-  string drinks[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"};
+  
   name = names[rand() % 6];
-  drink = drinks[rand() % 6];
+  item = items[rand() % itemSize];
 }
 
 int main() {
   srand(static_cast<unsigned>(time(0)));
 
   CoffeeQueue queue;
-  string name, drink;
+  deque<pair<string, string>> muffinQueue:
 
+  string name, coffeedrink, muffinFlavor;
+  string coffeeDrinks[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"};
+  string muffinFlavor[] = {"Chocolate", "Blueberry", "Banana", "Confetti", "Cinnamon", "Cupcake"}; 
+  
   for (int i = 0; i < 3; ++i) {
     generateCustomer(name, drink);
     queue.addQueue(name, drink);
