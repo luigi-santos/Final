@@ -69,3 +69,31 @@ void generateCustomer(string& name, string& drink) {
   name = names[rand() % 6];
   drink = drinks[rand() % 6];
 }
+
+int main() {
+  srand(static_cast<unsigned>(time(0)));
+
+  CoffeeQueue queue;
+  string name, drink;
+
+  for (int i = 0; i < 3; ++i) {
+    generateCustomer(name, drink);
+    queue.addQueue(name, drink);
+  }
+
+  for (int round = 1; round <= 10; ++round) {
+    cout << endl;
+    cout << "--- Round " << round << " ---" << endl;
+    queue.RemoveQueue();
+
+    if (rand() % 2 == 0) {
+      generateCustomer(name, drink);
+      cout << name << " with a " << drink << " joins the queue." << endl;
+      queue.addQueue(name, drink);
+    }
+
+    queue.display();
+  }
+
+  return 0;
+}
