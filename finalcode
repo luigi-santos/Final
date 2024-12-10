@@ -2,6 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include <ctime>
+#include <deque>
 
 using namespace std;
 
@@ -74,15 +75,15 @@ int main() {
   srand(static_cast<unsigned>(time(0)));
 
   CoffeeQueue coffeeQueue;
-  deque<pair<string, string>> muffinQueue:
+  deque<pair<string, string>> muffinQueue;
 
-  string name, coffeedrink, muffinFlavor;
+  string name, coffeeDrink, muffinFlavor;
   string coffeeDrinks[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"};
   string muffinFlavors[] = {"Chocolate", "Blueberry", "Banana", "Confetti", "Cinnamon", "Cupcake"}; 
   
   for (int i = 0; i < 3; ++i) {
     generateCustomer(name, coffeeDrink, coffeeDrinks, 6);
-    queue.addQueue(name, coffeeDrink);
+    coffeeQueue.addQueue(name, coffeeDrink);
 
     generateCustomer(name, muffinFlavor, muffinFlavors, 6);
     muffinQueue.push_back({name, muffinFlavor});
@@ -98,7 +99,7 @@ int main() {
     if (rand() % 2 == 0) {
       generateCustomer(name, coffeeDrink, coffeeDrinks, 6);
       cout << name << " with a " << coffeeDrink << " joins the coffee queue." << endl;
-      coffeequeue.addQueue(name, coffeeDrink);
+      coffeeQueue.addQueue(name, coffeeDrink);
     }
 
     coffeeQueue.display();
