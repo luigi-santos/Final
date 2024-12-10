@@ -82,7 +82,7 @@ int main() {
   string name, coffeeDrink, muffinFlavor, braceletColor;
   string coffeeDrinks[] = {"Coffee", "Hot Chocolate", "Frappe", "Mocha", "Espresso", "Latte"};
   string muffinFlavors[] = {"Chocolate", "Blueberry", "Banana", "Confetti", "Cinnamon", "Cupcake"}; 
-  string braceletColor[] = {"Red, "Blue", "Yellow", "Green", "Pink", "Purple"};
+  string braceletColors[] = {"Red", "Blue", "Yellow", "Green", "Pink", "Purple"};
 
   for (int i = 0; i < 3; ++i) {
     generateCustomer(name, coffeeDrink, coffeeDrinks, 6);
@@ -91,7 +91,7 @@ int main() {
     generateCustomer(name, muffinFlavor, muffinFlavors, 6);
     muffinQueue.push_back({name, muffinFlavor});
 
-    generateCustomer(name, braceletColor, braceletColors, 6)
+    generateCustomer(name, braceletColor, braceletColors, 6);
     braceletQueue.push_back({name, braceletColor});
   }
 
@@ -159,6 +159,6 @@ int main() {
         cout << " " << customer.first << " (" << customer.second<< " bracelet)" << endl;
       }
     }
-
+  }
   return 0;
 }
